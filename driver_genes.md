@@ -1,7 +1,7 @@
 # 已知基因
-CGC: tier1, tier2
-MDG125: tsg, oncogene
-SMG127: 45%, 23%
+CGC: tier1, tier2  
+MDG125: tsg, oncogene  
+SMG127: 45%, 23%  
 CDG291: high confidence, candidate
 
 # SNV
@@ -9,10 +9,10 @@ CDG291: high confidence, candidate
 MuSic
 
 ## 功能缺陷
-OncodriveFM
-SIFT
-PolyPhen2
-MutationAssessor
+OncodriveFM  
+SIFT  
+PolyPhen2  
+MutationAssessor  
 
 ## 成簇突变
 OncodriveCLUST
