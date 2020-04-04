@@ -1,10 +1,10 @@
-# 已知基因
+# 1) 已知基因
 CGC: tier1, tier2  
 MDG125: tsg, oncogene  
 SMG127: 45%, 23%  
 CDG291: high confidence, candidate
 
-# SNV
+# 2) SNV
 ## 高频突变
 MuSic
 
@@ -17,5 +17,5 @@ MutationAssessor
 ## 成簇突变
 OncodriveCLUST
 
-# CNV
+# 3) CNV
 ## 高频CNV
