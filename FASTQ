@@ -1,0 +1,9 @@
+# read using python
+
+FQ=open('test.fq')
+while 1:
+    try:
+        head,seq,s,qual=FQ.next().strip(),FQ.next().strip(),FQ.next().strip(),FQ.next().strip()
+    except:
+        break
+        
