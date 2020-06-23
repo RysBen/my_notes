@@ -1,13 +1,1 @@
-#
-echo hello kitty
-
-#
-print("hello kitty")
-
-#
-print("hello kitty")
-
-#
-print "hello kitty"
-
-#
+20200623 FASTQ
