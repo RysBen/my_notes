@@ -1,9 +1,8 @@
-# read using python
-
-FQ=open('test.fq')
-while 1:
-    try:
-        head,seq,s,qual=FQ.next().strip(),FQ.next().strip(),FQ.next().strip(),FQ.next().strip()
-    except:
-        break
+#read using python
+with open('test.fq') as f:
+    while True:
+        try:
+            head,seq,sep,qual=f.next(),f.next(),f.next(),f.next()
+        except:
+            break
         
