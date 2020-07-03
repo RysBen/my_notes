@@ -1,8 +1,0 @@
-#read using python
-with open('test.fq') as f:
-    while True:
-        try:
-            head,seq,sep,qual=f.next(),f.next(),f.next(),f.next()
-        except:
-            break
-        
