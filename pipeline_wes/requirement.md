@@ -1,0 +1,12 @@
+# softwares
+- Trimmomatic
+- fastqc
+- multiqc (opt)
+- qualimap ()
+- bwa
+- GATK
+- samtools
+- vcftools
+- VEP
+- ANNOVAR
+- snpEff
