@@ -1,0 +1,12 @@
+#burrows-wheeler transform
+#rotation
+str+='$'
+matrix=[]
+for i in range(len(str)):
+    str=str[1:len(str)]+str[0]
+    matrix.append(str)
+#sort according right context
+bw_matrix=sorted(matrix)
+#bwt,i.e. last column
+last_column=[ i[-1] for i in bw_matrix]
+lc=''.join(last_column)
