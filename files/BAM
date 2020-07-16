@@ -1,0 +1,6 @@
+import pysam
+mysam=pysam.AlignmentFile('test.bam')
+
+#get mutated reads
+
+#stat strand bias
