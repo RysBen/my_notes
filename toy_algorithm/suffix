@@ -1,4 +1,6 @@
-#burrows-wheeler transform
+##############################
+## burrows-wheeler transform
+##############################
 #rotation
 str+='$'
 matrix=[]
@@ -10,3 +12,46 @@ bw_matrix=sorted(matrix)
 #bwt,i.e. last column
 last_column=[ i[-1] for i in bw_matrix]
 lc=''.join(last_column)
+
+##############################
+## FL mapping
+##############################
+#first column and count
+first_column=[ i[0] for i in bw_matrix]
+fc=''.join(first_column)
+count={}
+[count.setdefault(k,fc.count(k)) for k in set(fc)]
+#last column subscript array
+sub_D={'a':0,'c':0,'g':0,'t':0,'$':0}
+sub=[]
+for i in lc:
+    sub_D[i]+=1
+    sub.append(sub_D[i])
+#mapping
+def fc_index(c):
+    global idx
+    if c == 'a':
+        idx=0
+    elif c == 'c':
+        idx=count['a']
+    elif c == 'g':
+        idx=count['a']+count['c']
+    elif c == 't':
+        idx=count['a']+count['c']+count['g']
+    else:
+        pass
+    return idx
+
+ch=lc[0];ori=ch
+i=0
+n=0
+while n < len(lc)-2:
+    print(ch)
+    print(i,fc_index(ch),sub[i])
+    i=fc_index(ch)+sub[i]
+    print(i,fc_index(ch),sub[i])
+    ch=lc[i]
+    ori+=ch
+    n+=1
+
+ori=ori[::-1]
