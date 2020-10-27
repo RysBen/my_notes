@@ -8,7 +8,7 @@ mysam=pysam.AlignmentFile('test.bam')
 
 
 ##########################################################################
-# [1] extract reads containing a SNV
+#[1]extract reads containing a SNV
 ##########################################################################
 ```bash
 samtools view -b in.bam 1:161518378-161518378 |samtools fillmd -e - $REF |grep -v "@" | \
