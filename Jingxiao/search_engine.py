@@ -121,7 +121,7 @@ class BowInvertEngine(SearchEngineBase):
 # 3. BagofWord + Invertedm + cache (to test)
 #######################################################
 import pylru
-
+# 缓存类
 class LRUCache(object):
     def __init__():
         self.cache=pylru.lrucache(size)
@@ -131,15 +131,15 @@ class LRUCache(object):
         return self.cache[key]
     def set(self,key,value):
         self.cache[key]=value
-
+# 多重继承和继承链MRO
 class BowInvertCacheEngine(LRUCache,BowInvertEngine):
     def __init__(self):
-        super(BowInvertCacheEngine,self).__init__()
-        LRUCache.__init__(self)
+        super(BowInvertCacheEngine,self).__init__() #方法1：要求继承链顶端的父类必须要继承object
+        LRUCache.__init__(self)                     #方法2：当有多个继承函数需要调用时
     def search(self,query):
         #
         if self.has(query): return self.get(query)
         #
-        results=super(BowInvertCacheEngine).search(query)
+        results=super(BowInvertCacheEngine).search(query)   #强行调用被覆盖的父类函数
         self.set(query,results)
         return results
