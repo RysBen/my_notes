@@ -117,3 +117,29 @@ class BowInvertEngine(SearchEngineBase):
             words=tmp.split(' ')
             #words=filter(None,words)
             return set(words)
+#######################################################
+# 3. BagofWord + Invertedm + cache (to test)
+#######################################################
+import pylru
+
+class LRUCache(object):
+    def __init__():
+        self.cache=pylru.lrucache(size)
+    def has(self,key):
+        return key in self.cache
+    def get(self,key):
+        return self.cache[key]
+    def set(self,key,value):
+        self.cache[key]=value
+
+class BowInvertCacheEngine(LRUCache,BowInvertEngine):
+    def __init__(self):
+        super(BowInvertCacheEngine,self).__init__()
+        LRUCache.__init__(self)
+    def search(self,query):
+        #
+        if self.has(query): return self.get(query)
+        #
+        results=super(BowInvertCacheEngine).search(query)
+        self.set(query,results)
+        return results
