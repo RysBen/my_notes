@@ -72,4 +72,48 @@ class BOWengine(SimpleSearch):
                 return True
             return False
 
-#
+#######################################################
+# 3. BagofWord + Inverted
+#######################################################
+class BowInvertEngine(SearchEngineBase):
+    def __init__(self):
+        self.word2name={}
+    def process_corpus(self,name,text):
+        words=self.word_bag(text)
+        for w in words:
+            if w not in self.word2name: self.word2name[w]=[]
+            self.word2name[w].append(name)
+    def search(self,query):
+        query=list(self.word_bag(query))
+        #
+        query_idx=[]
+        for q in query: query_idx.append(0)
+        #
+        for q in query: 
+            if q not in self.word2name:
+                return []
+        ##
+        results=[]
+        while True:
+            cur_names=[]
+            for i,q in enumerate(query):
+                cur_idx=query_idx[i]
+                cur_word2name=self.word2name[q]
+                if cur_idx>=len(cur_word2name): return results   ## exit i >= length
+                cur_names.append(cur_word2name[cur_idx])
+            if all(n==cur_names[0] for n in cur_names):   ## files contain all query word, append i
+                results.append(cur_names[0])
+                query_idx=[i+1 for i in query_idx]
+                continue
+            min_val=min(cur_names)   ## files NOT contain all query word,  compare i+1, i
+            min_val_pos=cur_names.index(min_val)
+            query_idx[min_val_pos]+=1
+        ##
+
+    @staticmethod
+    def word_bag(text):
+            tmp=re.sub(r'([^\w]|\s+)',' ',text)
+            tmp=tmp.lower()
+            words=tmp.split(' ')
+            #words=filter(None,words)
+            return set(words)
