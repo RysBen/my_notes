@@ -117,8 +117,9 @@ class BowInvertEngine(SearchEngineBase):
             words=tmp.split(' ')
             #words=filter(None,words)
             return set(words)
+
 #######################################################
-# 3. BagofWord + Invertedm + cache (to test)
+# 3.1 BagofWord + Invertedm + cache (to test)
 #######################################################
 import pylru
 # 缓存类
