@@ -82,10 +82,10 @@ class BowInvertEngine(SearchEngineBase):
         words=self.word_bag(text)
         for w in words:
             if w not in self.word2name: self.word2name[w]=[]
-            self.word2name[w].append(name)
+            self.word2name[w].append(name)   # Inverted Index
     def search(self,query):
         query=list(self.word_bag(query))
-        #
+        # 合并 K 个有序数组
         query_idx=[]
         for q in query: query_idx.append(0)
         #
