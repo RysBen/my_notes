@@ -34,10 +34,16 @@
   - Skip-gram
 - GloVe
 
-参考资料
+3. 参考资料
 > 深度学习推荐系统中各类流行的Embedding方法（上）  
 > 自然语言处理：什么是词嵌入(word embedding)？  
 > \[Word Embedding系列] one-hot 编码  
 
 ## 4.2 循环神经网络（RNN）
+马尔可夫过程 隐马尔可夫过程 RNN LSTM
+
+## 4.3 卷积神经网络（CNN）
+
+## 4.4 文本分类器（P1）
+
 
