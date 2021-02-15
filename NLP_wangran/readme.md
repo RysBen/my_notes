@@ -24,3 +24,20 @@
 
 # 4. 网络模型
 ## 4.1 Embedding
+1. 定义
+> 形式上讲，Embedding 就是用一个低维稠密的向量 “表示” 一个对象。“表示” 意味着向量能够表达相应对象的某些特征，同时向量之间的距离反映了对象之间的相似性。  
+> Word embedding 是一种词的类型表示，具有相似意义的词具有相似的表示，是将词汇映射到实数向量的方法总称。词嵌入是自然语言处理的重要突破之一。
+2. 算法
+- Embedding Layer
+- Word2Vec
+  - CBOW
+  - Skip-gram
+- GloVe
+
+参考资料
+> 深度学习推荐系统中各类流行的Embedding方法（上）  
+> 自然语言处理：什么是词嵌入(word embedding)？  
+> \[Word Embedding系列] one-hot 编码  
+
+## 4.2 循环神经网络（RNN）
+
